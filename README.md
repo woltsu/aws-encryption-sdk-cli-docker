@@ -12,7 +12,7 @@ Docker image for aws-encryption-sdk-cli
     2. From the `Resources` tab, select `Specific` and add the created KMS key's arn there
 5. Attach the created policy to the created user
 
-## Usage
+## Encrypting files
 1. Build the image:
 ```bash
 ./build.sh
@@ -20,17 +20,17 @@ Docker image for aws-encryption-sdk-cli
 
 2. Encrypt:
 ```bash
-./encrypt.sh <input path> <output path>
+cat input_path | ./encrypt.sh > output_path
 ```
 
 >```bash
->./encrypt.sh secret.txt secret.txt.encrypted
+> cat secret.txt | ./encrypt.sh > secret.txt.encrypted
 >```
 
 3. Decrypt:
 ```bash
-./decrypt.sh <input path> <output path>
+cat input_path | ./decrypt.sh > output_path
 ```
 >```bash
->./decrypt.sh secret.txt.encrypted secret.txt
+> cat secret.txt.encrypted | ./decrypt.sh > secret.txt
 >```
