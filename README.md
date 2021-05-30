@@ -29,8 +29,13 @@ cat input_path | ./encrypt.sh > output_path
 
 3. Decrypt:
 ```bash
-cat input_path | ./decrypt.sh > output_path
+cat input_path | ./decrypt.sh > output_path
 ```
 >```bash
 > cat secret.txt.encrypted | ./decrypt.sh > secret.txt
 >```
+
+## Flags
+```
+-e = path to .env file (default project/.env)
+```
