@@ -10,4 +10,4 @@ done
 
 export $(grep -v '^#' $env_path | xargs)
 
-docker run -i --rm --env-file $env_path aws-encryption-sdk-cli:latest --decrypt -i - --wrapping-keys key=$KEY_ARN --decode -S --output -
+docker run -i --name aws-encryption-sdk-cli-docker-decrypt --rm --env-file $env_path aws-encryption-sdk-cli:latest --decrypt -i - --wrapping-keys key=$KEY_ARN --decode -S --output -
